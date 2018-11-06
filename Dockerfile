@@ -30,23 +30,3 @@ RUN chmod +x /entrypoint.sh
 ENTRYPOINT  /entrypoint.sh 
 
 EXPOSE 8080
- \
-# && unzip v2ray.zip \
-# && mv /v2raybin/v2ray-v4.2-linux-64/v2ray /v2raybin/ \
-# && mv /v2raybin/v2ray-v4.2-linux-64/v2ctl /v2raybin/ \
-# && mv /v2raybin/v2ray-v4.2-linux-64/geoip.dat /v2raybin/ \
-# && mv /v2raybin/v2ray-v4.2-linux-64/geosite.dat /v2raybin/ \
-# && chmod +x /v2raybin/v2ray \
-# && rm -rf v2ray.zip \
-# && rm -rf v2ray-v4.2-linux-64 \
-# && chgrp -R 0 /v2raybin \
-# && chmod -R g+rwX /v2raybin 
-
-RUN mkdir -m 777 /v2ray
-
-ADD entrypoint.sh /entrypoint.sh
-ADD config.json /v2ray/config.json
-RUN chmod +x /entrypoint.sh 
-ENTRYPOINT  /entrypoint.sh 
-
-EXPOSE 8080
